@@ -16,12 +16,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/csync"
-	"github.com/charmbracelet/crush/internal/home"
-	"github.com/charmbracelet/crush/internal/permission"
-	"github.com/charmbracelet/crush/internal/pubsub"
-	"github.com/charmbracelet/crush/internal/version"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/csync"
+	"github.com/tronx2100/ncrush/internal/home"
+	"github.com/tronx2100/ncrush/internal/permission"
+	"github.com/tronx2100/ncrush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/version"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

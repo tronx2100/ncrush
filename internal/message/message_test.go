@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/charmbracelet/crush/internal/db"
-	"github.com/charmbracelet/crush/internal/pubsub"
-	"github.com/charmbracelet/crush/internal/session"
+	"github.com/tronx2100/ncrush/internal/db"
+	"github.com/tronx2100/ncrush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/session"
 	"github.com/stretchr/testify/require"
 )
 

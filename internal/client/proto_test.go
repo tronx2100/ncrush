@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/charmbracelet/crush/internal/proto"
-	"github.com/charmbracelet/crush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/pubsub"
 	"github.com/stretchr/testify/require"
 )
 

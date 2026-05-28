@@ -5,10 +5,10 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/charmbracelet/crush/internal/message"
-	"github.com/charmbracelet/crush/internal/proto"
-	"github.com/charmbracelet/crush/internal/pubsub"
-	"github.com/charmbracelet/crush/internal/skills"
+	"github.com/tronx2100/ncrush/internal/message"
+	"github.com/tronx2100/ncrush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/skills"
 	"github.com/stretchr/testify/require"
 )
 

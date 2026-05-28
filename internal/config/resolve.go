@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/charmbracelet/crush/internal/env"
-	"github.com/charmbracelet/crush/internal/shell"
+	"github.com/tronx2100/ncrush/internal/env"
+	"github.com/tronx2100/ncrush/internal/shell"
 )
 
 // resolveTimeout bounds how long a single ResolveValue call may spend

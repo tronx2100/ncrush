@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/charmbracelet/crush/internal/diffdetect"
-	"github.com/charmbracelet/crush/internal/stringext"
-	"github.com/charmbracelet/crush/internal/ui/styles"
+	"github.com/tronx2100/ncrush/internal/diffdetect"
+	"github.com/tronx2100/ncrush/internal/stringext"
+	"github.com/tronx2100/ncrush/internal/ui/styles"
 )
 
 type toolResultContentWidths struct {

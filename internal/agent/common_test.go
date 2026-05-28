@@ -12,17 +12,17 @@ import (
 	"charm.land/fantasy"
 	"charm.land/fantasy/providers/openaicompat"
 	"charm.land/x/vcr"
-	"github.com/charmbracelet/crush/internal/agent/prompt"
-	"github.com/charmbracelet/crush/internal/agent/tools"
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/csync"
-	"github.com/charmbracelet/crush/internal/db"
-	"github.com/charmbracelet/crush/internal/filetracker"
-	"github.com/charmbracelet/crush/internal/history"
-	"github.com/charmbracelet/crush/internal/lsp"
-	"github.com/charmbracelet/crush/internal/message"
-	"github.com/charmbracelet/crush/internal/permission"
-	"github.com/charmbracelet/crush/internal/session"
+	"github.com/tronx2100/ncrush/internal/agent/prompt"
+	"github.com/tronx2100/ncrush/internal/agent/tools"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/csync"
+	"github.com/tronx2100/ncrush/internal/db"
+	"github.com/tronx2100/ncrush/internal/filetracker"
+	"github.com/tronx2100/ncrush/internal/history"
+	"github.com/tronx2100/ncrush/internal/lsp"
+	"github.com/tronx2100/ncrush/internal/message"
+	"github.com/tronx2100/ncrush/internal/permission"
+	"github.com/tronx2100/ncrush/internal/session"
 	"github.com/stretchr/testify/require"
 
 	_ "github.com/joho/godotenv/autoload"
@@ -142,7 +142,7 @@ func coderAgent(r *vcr.Recorder, env fakeEnv, large, small fantasy.LanguageModel
 	}
 
 	// NOTE(@andreynering): Set a fixed config to ensure cassettes match
-	// independently of user config on `$HOME/.config/crush/crush.json`.
+	// independently of user config on `$HOME/.config/ncrush/ncrush.json`.
 	cfg.Config().Options.Attribution = &config.Attribution{
 		TrailerStyle:  "co-authored-by",
 		GeneratedWith: true,

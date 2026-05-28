@@ -3,9 +3,9 @@ package backend
 import (
 	"context"
 
-	"github.com/charmbracelet/crush/internal/message"
-	"github.com/charmbracelet/crush/internal/proto"
-	"github.com/charmbracelet/crush/internal/session"
+	"github.com/tronx2100/ncrush/internal/message"
+	"github.com/tronx2100/ncrush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/session"
 )
 
 // CreateSession creates a new session in the given workspace.

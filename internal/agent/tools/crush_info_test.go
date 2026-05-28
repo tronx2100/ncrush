@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"charm.land/catwalk/pkg/catwalk"
-	"github.com/charmbracelet/crush/internal/agent/tools/mcp"
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/csync"
-	"github.com/charmbracelet/crush/internal/lsp"
-	"github.com/charmbracelet/crush/internal/skills"
+	"github.com/tronx2100/ncrush/internal/agent/tools/mcp"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/csync"
+	"github.com/tronx2100/ncrush/internal/lsp"
+	"github.com/tronx2100/ncrush/internal/skills"
 	"github.com/stretchr/testify/require"
 )
 
@@ -36,13 +36,13 @@ func TestCrushInfo_ConfigFiles(t *testing.T) {
 
 	cfg := config.NewTestStore(
 		&config.Config{Providers: csync.NewMap[string, config.ProviderConfig]()},
-		"/home/user/.config/crush/crush.json",
-		"/project/.crush/crush.json",
+		"/home/user/.config/ncrush/ncrush.json",
+		"/project/.ncrush/nncrush.json",
 	)
 	output := buildCrushInfo(cfg, nil, nil, nil, nil)
 	require.Contains(t, output, "[config_files]")
-	require.Contains(t, output, "/home/user/.config/crush/crush.json")
-	require.Contains(t, output, "/project/.crush/crush.json")
+	require.Contains(t, output, "/home/user/.config/ncrush/ncrush.json")
+	require.Contains(t, output, "/project/.ncrush/nncrush.json")
 }
 
 func TestCrushInfo_Models(t *testing.T) {
@@ -196,7 +196,7 @@ func TestCrushInfo_Options(t *testing.T) {
 	cfg := config.NewTestStore(&config.Config{
 		Providers: csync.NewMap[string, config.ProviderConfig](),
 		Options: &config.Options{
-			DataDirectory:        "/Users/user/project/.crush",
+			DataDirectory:        "/Users/user/project/.ncrush",
 			Debug:                true,
 			DisableAutoSummarize: true,
 		},
@@ -206,7 +206,7 @@ func TestCrushInfo_Options(t *testing.T) {
 	require.Contains(t, output, "[options]")
 	require.Contains(t, output, "auto_lsp = true")
 	require.Contains(t, output, "auto_summarize = false")
-	require.Contains(t, output, "data_directory = /Users/user/project/.crush")
+	require.Contains(t, output, "data_directory = /Users/user/project/.ncrush")
 	require.Contains(t, output, "debug = true")
 }
 
@@ -307,7 +307,7 @@ func TestCrushInfo_ConfigStaleness_Clean(t *testing.T) {
 	t.Parallel()
 
 	dir := t.TempDir()
-	configPath := filepath.Join(dir, "crush.json")
+	configPath := filepath.Join(dir, "ncrush.json")
 	require.NoError(t, os.WriteFile(configPath, []byte(`{}`), 0o600))
 
 	store := config.NewTestStore(&config.Config{
@@ -328,7 +328,7 @@ func TestCrushInfo_ConfigStaleness_Dirty(t *testing.T) {
 	t.Parallel()
 
 	dir := t.TempDir()
-	configPath := filepath.Join(dir, "crush.json")
+	configPath := filepath.Join(dir, "ncrush.json")
 	require.NoError(t, os.WriteFile(configPath, []byte(`{"debug": false}`), 0o600))
 
 	store := config.NewTestStore(&config.Config{
@@ -353,7 +353,7 @@ func TestCrushInfo_ConfigStaleness_MissingPath(t *testing.T) {
 	t.Parallel()
 
 	dir := t.TempDir()
-	configPath := filepath.Join(dir, "crush.json")
+	configPath := filepath.Join(dir, "ncrush.json")
 	require.NoError(t, os.WriteFile(configPath, []byte(`{}`), 0o600))
 
 	store := config.NewTestStore(&config.Config{

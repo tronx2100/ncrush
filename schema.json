@@ -405,7 +405,7 @@
           "items": {
             "type": "string",
             "examples": [
-              "~/.config/crush/skills",
+              "~/.config/ncrush/skills",
               "./skills"
             ]
           },
@@ -434,9 +434,9 @@
         "data_directory": {
           "type": "string",
           "description": "Directory for storing application data. Relative paths are resolved against the working directory; absolute paths are used as-is.",
-          "default": ".crush",
+          "default": ".ncrush",
           "examples": [
-            ".crush"
+            ".ncrush"
           ]
         },
         "disabled_tools": {

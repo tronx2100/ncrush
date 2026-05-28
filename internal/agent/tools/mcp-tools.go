@@ -6,9 +6,9 @@ import (
 	"slices"
 
 	"charm.land/fantasy"
-	"github.com/charmbracelet/crush/internal/agent/tools/mcp"
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/permission"
+	"github.com/tronx2100/ncrush/internal/agent/tools/mcp"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/permission"
 )
 
 // whitelistDockerTools contains Docker MCP tools that don't require permission.

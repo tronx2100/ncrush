@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"charm.land/fantasy"
-	"github.com/charmbracelet/crush/internal/filetracker"
-	"github.com/charmbracelet/crush/internal/permission"
-	"github.com/charmbracelet/crush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/filetracker"
+	"github.com/tronx2100/ncrush/internal/permission"
+	"github.com/tronx2100/ncrush/internal/pubsub"
 	"github.com/stretchr/testify/require"
 )
 

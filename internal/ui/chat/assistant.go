@@ -8,11 +8,11 @@ import (
 
 	tea "charm.land/bubbletea/v2"
 	"charm.land/lipgloss/v2"
-	"github.com/charmbracelet/crush/internal/message"
-	"github.com/charmbracelet/crush/internal/ui/anim"
-	"github.com/charmbracelet/crush/internal/ui/common"
-	"github.com/charmbracelet/crush/internal/ui/list"
-	"github.com/charmbracelet/crush/internal/ui/styles"
+	"github.com/tronx2100/ncrush/internal/message"
+	"github.com/tronx2100/ncrush/internal/ui/anim"
+	"github.com/tronx2100/ncrush/internal/ui/common"
+	"github.com/tronx2100/ncrush/internal/ui/list"
+	"github.com/tronx2100/ncrush/internal/ui/styles"
 	"github.com/charmbracelet/x/ansi"
 )
 

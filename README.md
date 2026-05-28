@@ -236,9 +236,9 @@ Crush runs great with no configuration. That said, if you do need or want to
 customize Crush, configuration can be added either local to the project itself,
 or globally, with the following priority:
 
-1. `.crush.json`
-2. `crush.json`
-3. `$HOME/.config/crush/crush.json`
+1. `.ncrush.json`
+2. `ncrush.json`
+3. `$HOME/.config/ncrush/ncrush.json`
 
 Configuration itself is stored as a JSON object:
 
@@ -254,10 +254,10 @@ state, in one additional location:
 
 ```bash
 # Unix
-$HOME/.local/share/crush/crush.json
+$HOME/.local/share/crush/ncrush.json
 
 # Windows
-%LOCALAPPDATA%\crush\crush.json
+%LOCALAPPDATA%\crush\ncrush.json
 ```
 
 > [!TIP]
@@ -273,7 +273,7 @@ like you would. LSPs can be added manually like so:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "lsp": {
     "go": {
       "command": "gopls",
@@ -321,13 +321,13 @@ Provider `extra_body` is a non-expanding JSON passthrough; put env-driven
 values in `extra_headers` or the provider's `api_key` / `base_url`, all of
 which do expand.
 
-> **Security note:** `crush.json` is trusted code. Any `$(...)` in it runs at
+> **Security note:** `ncrush.json` is trusted code. Any `$(...)` in it runs at
 > load time with your shell's privileges, before the UI appears. Don't launch
-> Crush in a directory whose `crush.json` you haven't reviewed.
+> Crush in a directory whose `ncrush.json` you haven't reviewed.
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "mcp": {
     "filesystem": {
       "type": "stdio",
@@ -405,11 +405,11 @@ does not get reaped before it can attach.
 ### Ignoring Files
 
 Crush respects `.gitignore` files by default, but you can also create a
-`.crushignore` file to specify additional files and directories that Crush
+`.nncrushignore` file to specify additional files and directories that Crush
 should ignore. This is useful for excluding files that you want in version
 control but don't want Crush to consider when providing context.
 
-The `.crushignore` file uses the same syntax as `.gitignore` and can be placed
+The `.nncrushignore` file uses the same syntax as `.gitignore` and can be placed
 in the root of your project or in subdirectories.
 
 ### Allowing Tools
@@ -420,7 +420,7 @@ permissions. Use this with care.
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "permissions": {
     "allowed_tools": [
       "view",
@@ -444,7 +444,7 @@ completely hidden from the agent.
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "disabled_tools": ["bash", "sourcegraph"]
   }
@@ -461,7 +461,7 @@ from the agent, including builtin skills and skills discovered from disk.
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "disabled_skills": ["crush-config"]
   }
@@ -479,7 +479,7 @@ The global paths we looks for skills are:
 
 * `$CRUSH_SKILLS_DIR`
 * `$XDG_CONFIG_HOME/agents/skills` or `~/.config/agents/skills/`
-* `$XDG_CONFIG_HOME/crush/skills` or `~/.config/crush/skills/`
+* `$XDG_CONFIG_HOME/crush/skills` or `~/.config/ncrush/skills/`
 * `~/.agents/skills/`
 * `~/.claude/skills/`
 * On Windows, we _also_ look at
@@ -491,16 +491,16 @@ On top of that, we _also_ load skills in your project from the following
 relative paths:
 
 * `.agents/skills`
-* `.crush/skills`
+* `.ncrush/skills`
 * `.claude/skills`
 * `.cursor/skills`
 
 ```jsonc
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "skills_paths": [
-      "~/.config/crush/skills", // Windows: "%LOCALAPPDATA%\\crush\\skills",
+      "~/.config/ncrush/skills", // Windows: "%LOCALAPPDATA%\\crush\\skills",
       "./project-skills",
     ],
   },
@@ -511,8 +511,8 @@ You can get started with example skills from [anthropics/skills](https://github.
 
 ```bash
 # Unix
-mkdir -p ~/.config/crush/skills
-cd ~/.config/crush/skills
+mkdir -p ~/.config/ncrush/skills
+cd ~/.config/ncrush/skills
 git clone https://github.com/anthropics/skills.git _temp
 mv _temp/skills/* . && rm -rf _temp
 ```
@@ -564,7 +564,7 @@ focused _and_ your terminal supports reporting the focus state.
 
 ```jsonc
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "disable_notifications": false, // default
   },
@@ -584,7 +584,7 @@ name and location with the `initialize_as` option:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "initialize_as": "AGENTS.md"
   }
@@ -604,7 +604,7 @@ it creates. You can customize this behavior with the `attribution` option:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "attribution": {
       "trailer_style": "co-authored-by",
@@ -641,7 +641,7 @@ API. Don't forget to set `DEEPSEEK_API_KEY` in your environment.
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "providers": {
     "deepseek": {
       "type": "openai-compat",
@@ -670,7 +670,7 @@ Custom Anthropic-compatible providers follow this format:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "providers": {
     "custom-anthropic": {
       "type": "anthropic",
@@ -719,7 +719,7 @@ To add specific models to the configuration, configure as such:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "providers": {
     "vertexai": {
       "models": [
@@ -792,7 +792,7 @@ Local models can also be configured via OpenAI-compatible API. Here are two comm
 ## Logging
 
 Sometimes you need to look at logs. Luckily, Crush logs all sorts of
-stuff. Logs are stored in `./.crush/logs/crush.log` relative to the project.
+stuff. Logs are stored in `./.ncrush/logs/crush.log` relative to the project.
 
 The CLI also contains some helper commands to make perusing recent logs easier:
 
@@ -812,7 +812,7 @@ config:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "debug": true,
     "debug_lsp": true
@@ -835,11 +835,11 @@ air-gapped environments, this might not be want you want, and this feature can
 be disabled.
 
 To disable automatic provider updates, set `disable_provider_auto_update` into
-your `crush.json` config:
+your `ncrush.json` config:
 
 ```json
 {
-  "$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/ncrush.json",
   "options": {
     "disable_provider_auto_update": true
   }

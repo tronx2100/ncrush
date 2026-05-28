@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/charmbracelet/crush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/proto"
 	"github.com/stretchr/testify/require"
 )
 

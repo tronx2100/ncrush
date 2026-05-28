@@ -5,14 +5,14 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/charmbracelet/crush/internal/agent"
-	mcptools "github.com/charmbracelet/crush/internal/agent/tools/mcp"
-	"github.com/charmbracelet/crush/internal/commands"
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/oauth"
-	"github.com/charmbracelet/crush/internal/proto"
-	"github.com/charmbracelet/crush/internal/pubsub"
-	"github.com/charmbracelet/crush/internal/skills"
+	"github.com/tronx2100/ncrush/internal/agent"
+	mcptools "github.com/tronx2100/ncrush/internal/agent/tools/mcp"
+	"github.com/tronx2100/ncrush/internal/commands"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/oauth"
+	"github.com/tronx2100/ncrush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/skills"
 )
 
 // publishConfigChanged publishes a ConfigChanged event on the workspace's

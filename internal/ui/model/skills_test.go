@@ -3,10 +3,10 @@ package model
 import (
 	"testing"
 
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/skills"
-	"github.com/charmbracelet/crush/internal/ui/common"
-	uistyles "github.com/charmbracelet/crush/internal/ui/styles"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/skills"
+	"github.com/tronx2100/ncrush/internal/ui/common"
+	uistyles "github.com/tronx2100/ncrush/internal/ui/styles"
 	"github.com/stretchr/testify/require"
 )
 

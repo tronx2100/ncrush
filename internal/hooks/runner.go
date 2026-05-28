@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/shell"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/shell"
 )
 
 // abandonGrace is how long runOne waits after ctx cancellation for the

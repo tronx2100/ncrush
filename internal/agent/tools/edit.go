@@ -11,14 +11,14 @@ import (
 	"time"
 
 	"charm.land/fantasy"
-	"github.com/charmbracelet/crush/internal/diff"
-	"github.com/charmbracelet/crush/internal/filepathext"
-	"github.com/charmbracelet/crush/internal/filetracker"
-	"github.com/charmbracelet/crush/internal/fsext"
-	"github.com/charmbracelet/crush/internal/history"
+	"github.com/tronx2100/ncrush/internal/diff"
+	"github.com/tronx2100/ncrush/internal/filepathext"
+	"github.com/tronx2100/ncrush/internal/filetracker"
+	"github.com/tronx2100/ncrush/internal/fsext"
+	"github.com/tronx2100/ncrush/internal/history"
 
-	"github.com/charmbracelet/crush/internal/lsp"
-	"github.com/charmbracelet/crush/internal/permission"
+	"github.com/tronx2100/ncrush/internal/lsp"
+	"github.com/tronx2100/ncrush/internal/permission"
 )
 
 type EditParams struct {

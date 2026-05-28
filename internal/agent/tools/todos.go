@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"charm.land/fantasy"
-	"github.com/charmbracelet/crush/internal/session"
+	"github.com/tronx2100/ncrush/internal/session"
 )
 
 //go:embed todos.md

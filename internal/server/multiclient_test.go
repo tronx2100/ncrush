@@ -8,8 +8,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/charmbracelet/crush/internal/backend"
-	"github.com/charmbracelet/crush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/backend"
+	"github.com/tronx2100/ncrush/internal/proto"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 )

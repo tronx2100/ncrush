@@ -1,4 +1,4 @@
-module github.com/charmbracelet/crush
+module github.com/tronx2100/ncrush
 
 go 1.26.3
 

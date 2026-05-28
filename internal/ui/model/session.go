@@ -10,13 +10,13 @@ import (
 
 	tea "charm.land/bubbletea/v2"
 	"charm.land/lipgloss/v2"
-	"github.com/charmbracelet/crush/internal/diff"
-	"github.com/charmbracelet/crush/internal/fsext"
-	"github.com/charmbracelet/crush/internal/history"
-	"github.com/charmbracelet/crush/internal/session"
-	"github.com/charmbracelet/crush/internal/ui/common"
-	"github.com/charmbracelet/crush/internal/ui/styles"
-	"github.com/charmbracelet/crush/internal/ui/util"
+	"github.com/tronx2100/ncrush/internal/diff"
+	"github.com/tronx2100/ncrush/internal/fsext"
+	"github.com/tronx2100/ncrush/internal/history"
+	"github.com/tronx2100/ncrush/internal/session"
+	"github.com/tronx2100/ncrush/internal/ui/common"
+	"github.com/tronx2100/ncrush/internal/ui/styles"
+	"github.com/tronx2100/ncrush/internal/ui/util"
 	"github.com/charmbracelet/x/ansi"
 )
 

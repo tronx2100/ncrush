@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"charm.land/lipgloss/v2"
-	"github.com/charmbracelet/crush/internal/ui/logo"
-	"github.com/charmbracelet/crush/internal/ui/styles"
+	"github.com/tronx2100/ncrush/internal/ui/logo"
+	"github.com/tronx2100/ncrush/internal/ui/styles"
 	"github.com/charmbracelet/x/term"
 )
 

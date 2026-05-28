@@ -24,21 +24,21 @@ import (
 	fang "charm.land/fang/v2"
 	"charm.land/lipgloss/v2"
 	"github.com/charmbracelet/colorprofile"
-	"github.com/charmbracelet/crush/internal/app"
-	"github.com/charmbracelet/crush/internal/client"
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/db"
-	"github.com/charmbracelet/crush/internal/event"
-	crushlog "github.com/charmbracelet/crush/internal/log"
-	"github.com/charmbracelet/crush/internal/projects"
-	"github.com/charmbracelet/crush/internal/proto"
-	"github.com/charmbracelet/crush/internal/server"
-	"github.com/charmbracelet/crush/internal/session"
-	"github.com/charmbracelet/crush/internal/skills"
-	"github.com/charmbracelet/crush/internal/ui/common"
-	ui "github.com/charmbracelet/crush/internal/ui/model"
-	"github.com/charmbracelet/crush/internal/version"
-	"github.com/charmbracelet/crush/internal/workspace"
+	"github.com/tronx2100/ncrush/internal/app"
+	"github.com/tronx2100/ncrush/internal/client"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/db"
+	"github.com/tronx2100/ncrush/internal/event"
+	crushlog "github.com/tronx2100/ncrush/internal/log"
+	"github.com/tronx2100/ncrush/internal/projects"
+	"github.com/tronx2100/ncrush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/server"
+	"github.com/tronx2100/ncrush/internal/session"
+	"github.com/tronx2100/ncrush/internal/skills"
+	"github.com/tronx2100/ncrush/internal/ui/common"
+	ui "github.com/tronx2100/ncrush/internal/ui/model"
+	"github.com/tronx2100/ncrush/internal/version"
+	"github.com/tronx2100/ncrush/internal/workspace"
 	uv "github.com/charmbracelet/ultraviolet"
 	"github.com/charmbracelet/x/ansi"
 	"github.com/charmbracelet/x/exp/charmtone"
@@ -75,7 +75,7 @@ func init() {
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "crush",
+	Use:   "ncrush",
 	Short: "A terminal-first AI assistant for software development",
 	Long:  "A glamorous, terminal-first AI assistant for software development and adjacent tasks",
 	Example: `
@@ -95,7 +95,7 @@ crush --debug --cwd /path/to/project
 crush --yolo
 
 # Run with custom data directory
-crush --data-dir /path/to/custom/.crush
+crush --data-dir /path/to/custom/.ncrush
 
 # Continue a previous session
 crush --session {session-id}
@@ -138,7 +138,7 @@ crush --continue
 		if _, err := program.Run(); err != nil {
 			event.Error(err)
 			slog.Error("TUI run error", "error", err)
-			return errors.New("Crush crashed. If metrics are enabled, we were notified about it. If you'd like to report it, please copy the stacktrace above and open an issue at https://github.com/charmbracelet/crush/issues/new?template=bug.yml") //nolint:staticcheck
+			return errors.New("Crush crashed. If metrics are enabled, we were notified about it. If you'd like to report it, please copy the stacktrace above and open an issue at https://github.com/tronx2100/ncrush/issues/new?template=bug.yml") //nolint:staticcheck
 		}
 		return nil
 	},

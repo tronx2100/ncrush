@@ -12,11 +12,11 @@ import (
 	"time"
 
 	"charm.land/fantasy"
-	"github.com/charmbracelet/crush/internal/agent"
-	"github.com/charmbracelet/crush/internal/app"
-	"github.com/charmbracelet/crush/internal/backend"
-	"github.com/charmbracelet/crush/internal/message"
-	"github.com/charmbracelet/crush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/agent"
+	"github.com/tronx2100/ncrush/internal/app"
+	"github.com/tronx2100/ncrush/internal/backend"
+	"github.com/tronx2100/ncrush/internal/message"
+	"github.com/tronx2100/ncrush/internal/proto"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 )

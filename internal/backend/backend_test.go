@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/charmbracelet/crush/internal/csync"
-	"github.com/charmbracelet/crush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/csync"
+	"github.com/tronx2100/ncrush/internal/proto"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 )

@@ -9,11 +9,11 @@ import (
 	"time"
 
 	tea "charm.land/bubbletea/v2"
-	"github.com/charmbracelet/crush/internal/backend"
-	"github.com/charmbracelet/crush/internal/config"
-	"github.com/charmbracelet/crush/internal/proto"
-	"github.com/charmbracelet/crush/internal/pubsub"
-	"github.com/charmbracelet/crush/internal/skills"
+	"github.com/tronx2100/ncrush/internal/backend"
+	"github.com/tronx2100/ncrush/internal/config"
+	"github.com/tronx2100/ncrush/internal/proto"
+	"github.com/tronx2100/ncrush/internal/pubsub"
+	"github.com/tronx2100/ncrush/internal/skills"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 )
@@ -52,7 +52,7 @@ func TestBackend_WorkspaceSkillsIsolation(t *testing.T) {
 	wsA, _, err := b.CreateWorkspace(proto.Workspace{
 		ClientID: cidA,
 		Path:     wdA,
-		DataDir:  filepath.Join(wdA, ".crush"),
+		DataDir:  filepath.Join(wdA, ".ncrush"),
 	})
 	require.NoError(t, err)
 	t.Cleanup(func() { _ = b.DeleteWorkspace(wsA.ID, cidA) })
@@ -60,7 +60,7 @@ func TestBackend_WorkspaceSkillsIsolation(t *testing.T) {
 	wsB, _, err := b.CreateWorkspace(proto.Workspace{
 		ClientID: cidB,
 		Path:     wdB,
-		DataDir:  filepath.Join(wdB, ".crush"),
+		DataDir:  filepath.Join(wdB, ".ncrush"),
 	})
 	require.NoError(t, err)
 	t.Cleanup(func() { _ = b.DeleteWorkspace(wsB.ID, cidB) })

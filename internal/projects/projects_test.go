@@ -15,7 +15,7 @@ func TestRegisterAndList(t *testing.T) {
 	t.Setenv("CRUSH_GLOBAL_DATA", filepath.Join(tmpDir, "crush"))
 
 	// Test registering a project
-	err := Register("/home/user/project1", "/home/user/project1/.crush")
+	err := Register("/home/user/project1", "/home/user/project1/.ncrush")
 	if err != nil {
 		t.Fatalf("Register failed: %v", err)
 	}
@@ -34,12 +34,12 @@ func TestRegisterAndList(t *testing.T) {
 		t.Errorf("Expected path /home/user/project1, got %s", projects[0].Path)
 	}
 
-	if projects[0].DataDir != "/home/user/project1/.crush" {
-		t.Errorf("Expected data_dir /home/user/project1/.crush, got %s", projects[0].DataDir)
+	if projects[0].DataDir != "/home/user/project1/.ncrush" {
+		t.Errorf("Expected data_dir /home/user/project1/.ncrush, got %s", projects[0].DataDir)
 	}
 
 	// Register another project
-	err = Register("/home/user/project2", "/home/user/project2/.crush")
+	err = Register("/home/user/project2", "/home/user/project2/.ncrush")
 	if err != nil {
 		t.Fatalf("Register failed: %v", err)
 	}
@@ -65,7 +65,7 @@ func TestRegisterUpdatesExisting(t *testing.T) {
 	t.Setenv("CRUSH_GLOBAL_DATA", filepath.Join(tmpDir, "crush"))
 
 	// Register a project
-	err := Register("/home/user/project1", "/home/user/project1/.crush")
+	err := Register("/home/user/project1", "/home/user/project1/.ncrush")
 	if err != nil {
 		t.Fatalf("Register failed: %v", err)
 	}
@@ -76,7 +76,7 @@ func TestRegisterUpdatesExisting(t *testing.T) {
 	// Wait a bit and re-register
 	time.Sleep(10 * time.Millisecond)
 
-	err = Register("/home/user/project1", "/home/user/project1/.crush-new")
+	err = Register("/home/user/project1", "/home/user/project1/.ncrush-new")
 	if err != nil {
 		t.Fatalf("Register failed: %v", err)
 	}
@@ -87,7 +87,7 @@ func TestRegisterUpdatesExisting(t *testing.T) {
 		t.Fatalf("Expected 1 project after update, got %d", len(projects))
 	}
 
-	if projects[0].DataDir != "/home/user/project1/.crush-new" {
+	if projects[0].DataDir != "/home/user/project1/.ncrush-new" {
 		t.Errorf("Expected updated data_dir, got %s", projects[0].DataDir)
 	}
 
@@ -131,8 +131,8 @@ func TestRegisterWithParentDataDir(t *testing.T) {
 	t.Setenv("CRUSH_GLOBAL_DATA", filepath.Join(tmpDir, "crush"))
 
 	// Register a project where .crush is in a parent directory.
-	// e.g., working in /home/user/monorepo/packages/app but .crush is at /home/user/monorepo/.crush
-	err := Register("/home/user/monorepo/packages/app", "/home/user/monorepo/.crush")
+	// e.g., working in /home/user/monorepo/packages/app but .crush is at /home/user/monorepo/.ncrush
+	err := Register("/home/user/monorepo/packages/app", "/home/user/monorepo/.ncrush")
 	if err != nil {
 		t.Fatalf("Register failed: %v", err)
 	}
@@ -150,8 +150,8 @@ func TestRegisterWithParentDataDir(t *testing.T) {
 		t.Errorf("Expected path /home/user/monorepo/packages/app, got %s", projects[0].Path)
 	}
 
-	if projects[0].DataDir != "/home/user/monorepo/.crush" {
-		t.Errorf("Expected data_dir /home/user/monorepo/.crush, got %s", projects[0].DataDir)
+	if projects[0].DataDir != "/home/user/monorepo/.ncrush" {
+		t.Errorf("Expected data_dir /home/user/monorepo/.ncrush, got %s", projects[0].DataDir)
 	}
 }
 
