@@ -36,9 +36,11 @@ MODELS=$(echo "$MODELS_JSON" | jq -r '
   ]
 ')
 
-cat > "$CONFIG_FILE" << NCRUSHEOF
+# Basis-Config falls noch keine existiert
+if [ ! -f "$CONFIG_FILE" ]; then
+  cat > "$CONFIG_FILE" << NCRUSHEOF
 {
-  "\$schema": "https://charm.land/crush.json",
+  "$schema": "https://charm.land/crush.json",
   "default_provider": "lmstudio",
   "providers": {
     "lmstudio": {
@@ -46,17 +48,26 @@ cat > "$CONFIG_FILE" << NCRUSHEOF
       "base_url": "$LMSTUDIO_URL/v1/",
       "type": "openai-compat",
       "api_key": "${LM_API_TOKEN:-lmstudio}",
-      "models": $(echo "$MODELS")
-    },
-    "anthropic": {
-      "api_key": "${ANTHROPIC_API_KEY:-}"
-    },
-    "gemini": {
-      "api_key": "${GEMINI_API_KEY:-}"
+      "models": []
     }
   }
 }
 NCRUSHEOF
+fi
+
+# Nur die LM Studio Modellliste updaten — alles andere (MCP, LSP, etc.) bleibt erhalten
+UPDATED=$(jq \
+  --argjson models "$MODELS" \
+  --arg url "$LMSTUDIO_URL/v1/" \
+  --arg key "${LM_API_TOKEN:-lmstudio}" \
+  '.providers.lmstudio.models = $models
+   | .providers.lmstudio.base_url = $url
+   | .providers.lmstudio.api_key = $key
+   | .providers.lmstudio.name = "LM Studio"
+   | .providers.lmstudio.type = "openai-compat"' \
+  "$CONFIG_FILE")
+
+echo "$UPDATED" > "$CONFIG_FILE"
 
 COUNT=$(echo "$MODELS" | jq length)
 VISION_COUNT=$(echo "$MODELS" | jq '[.[] | select(.supports_attachments == true)] | length')
